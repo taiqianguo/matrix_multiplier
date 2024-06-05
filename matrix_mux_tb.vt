@@ -1,0 +1,47 @@
+
+// 
+
+`timescale 1 ps/ 1 ps
+module matrix_mux_tb();
+// constants                                           
+// general purpose registers
+// test vector input registers
+reg reset=0;
+reg start=0;
+reg clk=0;
+wire done;
+// wires                                               
+wire  [11:0] clock_count;
+
+                        
+matrix_mux UUT (
+	.reset(reset),
+	.clk(clk),
+	.start(start),
+	.done(done),
+	.clock_count(clock_count)
+);
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin       
+clk<=0;
+reset<=1;
+start<=0;
+             
+#40     
+reset<=0;
+
+
+#20     
+start<=1;
+
+                      
+end   
+
+
+                                                 
+always #10 clk <= ~clk;                                                    
+                                                
+endmodule
+
