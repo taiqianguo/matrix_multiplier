@@ -1,5 +1,5 @@
 # matrix_multiplier
-a matrix multiplier with 2 MAC in parallel, and a spare matrix vector multiplier based on CSR format
+a matrix multiplier with 2 MAC in parallel, and a sparse matrix vector multiplier based on CSR format
 
 The matrix is instansiated as a 8*8 matrix A and B with 8 bits signed value, the result C is 18 bit signed value matrix.
 Here's the result of one channel MAC matrix_multiplier based on three stage pipeline which is , memory access, mac, write back.
